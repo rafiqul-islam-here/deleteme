@@ -5,7 +5,7 @@ const Students = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API}/students`)
+    fetch("https://rafiq-appservice-backend-fhgrcwa8bbdrf3b7.southeastasia-01.azurewebsites.net/students")
       .then((res) => res.json())
       .then((data) => {
         setStudents(data);
