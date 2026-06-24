@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   nginx:
-    image: ghcr.io/rafiqhere/deleteme-nginx:latest
+    image: ghcr.io/rafiqul-islam-here/deleteme-nginx:latest
     ports:
       - "80:80"
     depends_on:
@@ -11,11 +11,11 @@ services:
     restart: unless-stopped
 
   frontend:
-    image: ghcr.io/rafiqhere/deleteme-frontend:latest
+    image: ghcr.io/rafiqul-islam-here/deleteme-frontend:latest
     restart: unless-stopped
 
   backend:
-    image: ghcr.io/rafiqhere/deleteme-backend:latest
+    image: ghcr.io/rafiqul-islam-here/deleteme-backend:latest
     restart: unless-stopped
     environment:
       DB_HOST: ${DB_HOST}
