@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: ghcr.io/rafiqhere/deleteme-nginx:latest
+    ports:
+      - "80:80"
+    depends_on:
+      - frontend
+      - backend
+    restart: unless-stopped
+
+  frontend:
+    image: ghcr.io/rafiqhere/deleteme-frontend:latest
+    restart: unless-stopped
+
+  backend:
+    image: ghcr.io/rafiqhere/deleteme-backend:latest
+    restart: unless-stopped
+    environment:
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      PORT: 3000
